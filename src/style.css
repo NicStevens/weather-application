@@ -6,6 +6,13 @@ body {
 
 h1 {
   text-align: center;
+  color: #297ca9;
+  font-size: 100px;
+  font-weight: 800;
+  font-style: italic;
+  text-shadow: #ece6ac 1px 0 10px;
+  margin: 20px 0;
+  line-height: 120px;
 }
 
 footer {
@@ -18,4 +25,24 @@ footer {
   margin: 15px auto;
   border-radius: 40px;
   padding: 30px;
+}
+
+.search-form {
+  text-align: center;
+}
+
+#search-input {
+  border: none;
+  border-radius: 5px;
+  width: 400px;
+  padding: 10px 10px;
+  font-size: 16px;
+}
+
+#search-button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background: #f1bc58;
 }
