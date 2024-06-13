@@ -3,10 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Application</title>
+    <title>Weather Forecast Application</title>
+    <style>
+      body {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/128/782/original/pexels-8moments-1323550-1.jpg?1718244238");
+        background-size: auto;
+      }
+    </style>
   </head>
   <body>
-    <h1>Weather Application</h1>
+    <header>
+      <h1>Weather Forecast</h1>
+      <form>
+        <input type="search" placeholder="Enter city" required />
+        <input type="submit" value="search" />
+      </form>
+    </header>
+    <main>
+      <div>
+        <h2>New Orleans</h2>
+
+        <p>
+          77°F
+          <br />
+          Tuesday 14:49
+          <br />
+          Humidity: 90%, Wind: 3.3km/h
+        </p>
+      </div>
+      <div>
+        <p>
+          ☀️
+          <br />
+          Mostly sunny
+        </p>
+      </div>
+    </main>
     <footer>
       Coded by
       <a href="https://github.com/NicStevens" target="_blank">Nicky Stevens</a>,
