@@ -3,42 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather Forecast Application</title>
-    <style>
-      body {
-        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/128/782/original/pexels-8moments-1323550-1.jpg?1718244238");
-        background-size: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <header>
       <h1>Weather Forecast</h1>
-      <form>
-        <input type="search" placeholder="Enter city" required />
-        <input type="submit" value="search" />
-      </form>
+      <div class="weather-search">
+        <form>
+          <input type="search" placeholder="Enter city" required />
+          <input type="submit" value="search" />
+        </form>
+      </div>
     </header>
-    <main>
-      <div>
-        <h2>New Orleans</h2>
+    <div class="forecast-container">
+      <main>
+        <div>
+          <h2>New Orleans</h2>
 
-        <p>
-          77°F
-          <br />
-          Tuesday 14:49
-          <br />
-          Humidity: 90%, Wind: 3.3km/h
-        </p>
-      </div>
-      <div>
-        <p>
-          ☀️
-          <br />
-          Mostly sunny
-        </p>
-      </div>
-    </main>
+          <p>
+            77°F
+            <br />
+            Tuesday 14:49
+            <br />
+            Humidity: 90%, Wind: 3.3km/h
+          </p>
+        </div>
+        <div>
+          <p>
+            ☀️
+            <br />
+            Mostly sunny
+          </p>
+        </div>
+      </main>
+    </div>
     <footer>
       Coded by
       <a href="https://github.com/NicStevens" target="_blank">Nicky Stevens</a>,
