@@ -106,20 +106,34 @@ a {
   color: #297ca9;
 }
 
-.weather-forecast {
+.extended-weather-forecast {
   color: #34434c;
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
 }
 
-.weather-forecast-date {
+.extended-weather-day {
   font-weight: 600;
   font-size: 18px;
   padding: 5px;
 }
 
-.weather-forecast-temperatures {
+.extended-weather-forecast-temperatures {
   font-size: 16px;
 }
 
-.weather-forecast-temperature-min {
+.extended-weather-forecast-min {
   opacity: 0.5;
+}
+
+.day-forecast {
+  padding: 5px 30px;
+  border-radius: 5px;
+  background: rgba(80, 167, 209, 0.2);
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.day-forecast:hover {
+  transform: scale(1.15);
 }
