@@ -52,7 +52,35 @@ function searchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+  <div class="day-forecast">
+    <div class="extended-weather-day">${day}</div>
+    <div>
+      <img
+        src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+        width="42"
+      />
+    </div>
+    <div class="extended-weather-forecast-temperatures">
+      <span class="extended-weather-forecast-max">18°</span>
+      <span class="extended-weather-forecast-min">12°</span>
+    </div>
+  </div>
+`;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchSubmit);
 
 searchCity("Savannah");
+displayForecast();
