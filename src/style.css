@@ -38,7 +38,7 @@ h1 {
 
 .forecast-container {
   background: rgba(255, 255, 255, 0.4);
-  max-width: 625px;
+  max-width: 610px;
   margin: 15px auto;
   border-radius: 40px;
   padding: 30px;
@@ -117,10 +117,12 @@ a {
   font-weight: 600;
   font-size: 18px;
   padding: 5px;
+  text-align: center;
 }
 
 .extended-weather-forecast-temperatures {
   font-size: 16px;
+  text-align: center;
 }
 
 .extended-weather-forecast-min {
@@ -128,12 +130,18 @@ a {
 }
 
 .day-forecast {
-  padding: 5px 30px;
+  padding: 10px 15px;
   border-radius: 5px;
   background: rgba(80, 167, 209, 0.2);
   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  border-top: 2px solid #297ca9;
 }
 
 .day-forecast:hover {
   transform: scale(1.15);
+}
+
+.extended-weather-icon {
+  width: 80px;
+  height: 80px;
 }

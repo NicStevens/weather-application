@@ -16,6 +16,8 @@ function refreshWeather(response) {
   windElement.innerHTML = `${response.data.wind.speed} mph`;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" id="weather-icon"/>`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -52,27 +54,48 @@ function searchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function getForecast(city) {
+  let apiKey = "fb24932f22a0f4a4b10t5cee3cc7fo79";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
   <div class="day-forecast">
-    <div class="extended-weather-day">${day}</div>
+    <div class="extended-weather-day">${formatDay(day.time)}</div>
     <div>
       <img
-        src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-        width="42"
+        src="${day.condition.icon_url}"
+        class="extended-weather-icon"
       />
     </div>
     <div class="extended-weather-forecast-temperatures">
-      <span class="extended-weather-forecast-max">18°</span>
-      <span class="extended-weather-forecast-min">12°</span>
+      <span class="extended-weather-forecast-max">${Math.round(
+        day.temperature.maximum
+      )}°</span>
+      <span class="extended-weather-forecast-min">${Math.round(
+        day.temperature.minimum
+      )}°</span>
     </div>
   </div>
 `;
+    }
   });
 
   let forecastElement = document.querySelector("#forecast");
@@ -83,4 +106,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchSubmit);
 
 searchCity("Savannah");
-displayForecast();
