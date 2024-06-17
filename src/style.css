@@ -96,16 +96,6 @@ h1 {
   padding: 0 30px;
 }
 
-footer {
-  text-align: center;
-  color: rgb(79, 93, 102);
-  font-size: 13px;
-}
-
-a {
-  color: #297ca9;
-}
-
 .extended-weather-forecast {
   color: #34434c;
   display: flex;
@@ -144,4 +134,14 @@ a {
 .extended-weather-icon {
   width: 80px;
   height: 80px;
+}
+
+footer {
+  text-align: center;
+  color: rgb(79, 93, 102);
+  font-size: 13px;
+}
+
+a {
+  color: #297ca9;
 }
